@@ -1,0 +1,15 @@
+services:
+  mc_impact:
+    build:
+      context: .
+    ports:
+      - "25568:25565"
+    environment:
+      MC_RAM: "16G"
+      SECRET_WORLD_SEED: HIGHSECRET
+    volumes:
+      - ./data/worlds:/app/worlds
+      - ./data/logs:/app/logs
+      - ./data/backups:/app/backups
+      - ./data/config/telegrambridge.json:/app/config/telegrambridge.json
+      - ./data/storage:/app/storage
